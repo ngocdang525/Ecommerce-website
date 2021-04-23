@@ -1,0 +1,862 @@
+body,
+button,
+a,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: "Roboto", sans-serif;
+}
+a:hover{
+    text-decoration: none;
+}
+ul,ol{
+    list-style:none;
+    padding-left:0;
+}
+a:focus,
+button:focus{
+    outline: none;   
+}
+img {
+    max-width: 100%;
+}
+.flex {
+    display: flex;
+}
+.align-center,.item-center {
+    align-items: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.btn{
+    //cùng trên 1 thẻ dùng và &
+    &.focus, &:focus{
+        box-shadow: none;
+    }
+    &--primary{
+        background:$color-hover;
+    }
+    &--default {
+        border: 0;
+        background: transparent;
+        padding: 0;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    &--icon-down{
+        position: relative;
+        height: 50px;
+        &:before {
+            //tiền tố trc của thẻ. Cấu trúc: content: "";
+            content:"\f078";
+            font-family: "Font Awesome 5 Free";
+            position: absolute;
+            right: -10px;
+            top: 14px;
+            font-size: 13px;
+            font-weight: 900;//ver 5 của font awesome bắt buộc khai báo
+        }
+    }
+}
+
+.wrap-header {
+    height: 100px;
+}
+
+
+.form {
+    &__main {
+    background: #ffffff;
+    border-radius: 3px;
+    padding: 2px;
+    &--input {
+        width: 500px !important;
+        border: 0;
+        outline: none;
+    }
+    &--btn {
+        width: 65px;
+        outline: none;
+        color: #ffffff;
+        transition: all 0.3s ease;
+        &:hover {
+            background: #ffa431;
+             }
+         }
+    }
+}
+
+.login-register .icon-user {
+    font-size: 40px;
+    color: #ffffff;
+    margin-right: 8px;
+}
+
+.header {
+    &__top {
+         background: $color-hover;
+     }
+    
+     &--cart {
+         .text {
+             color: #ffffff;
+         }
+         .icon-cart {
+             font-size: 30px;
+             color: #ffffff;
+             margin-right: 8px;
+         }
+     }
+
+     &__bottom{
+         border-bottom: 1px dashed #cccccc;
+        .menu{
+            width:25%;
+            text-align: center;
+            position: relative;
+            &__sub{
+                position: absolute;
+                z-index:9;
+                left:0;
+                width: 100%;
+                background: #ffffff;
+                text-align: left ;
+                visibility: hidden;
+                opacity:0;
+                transition: all 0.25s ease;
+            }
+            &:hover{
+                .menu__sub{
+                    visibility: inherit;
+                    opacity: 1;
+                   
+                }
+            }
+        }
+    }
+ }
+ 
+ .dropdown{
+     &--borderRight{
+         border-right: 1px dashed #cccccc;
+     }
+ }
+  
+ .wrap-slider{
+     .slick-arrow{
+         font-size:0;
+         position: absolute;
+         z-index: 99;
+         top:50%;//khung mũi tên sẽ nằm giữa
+         margin-top: -30px;
+         border: none;
+        
+         &.slick-prev{
+            left:14%;
+            width: 40px;
+            height: 55px;
+            background: #bcb4c2;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            &:before{
+                content:"\f053";
+                font-family:"Font Awesome 5 Free";
+                font-size:16px;
+                font-weight: 900;
+                color: #ffffff;
+            }
+         
+        }
+
+        &.slick-next {
+            right:14%;
+            width: 40px;
+            height: 55px;
+            background: #bcb4c2;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            &:before{
+                content:"\f054";
+                font-family:"Font Awesome 5 Free";
+                font-size:16px;
+                font-weight: 900;
+                color: #ffffff;
+            }
+  
+        }
+
+        &:hover{
+            background: $color-hover;
+        }
+     }
+ }
+ .wrap-body{
+    background: #f5f5f5; 
+    display: flex;
+ }
+ .nav-category{
+     
+     list-style: none; //bỏ chấm tròn trong list
+     padding-left:0;// padding left tự động set trong li, nên bỏ
+     padding-top: 30px;
+     padding-bottom:30px;
+  
+    h2{
+        color:$color-base;
+        font-size: 15px;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+    a {
+        text-decoration: none;//bỏ gạch chân dưới link a
+        &:hover{
+            h2{
+            color: $color-hover;
+            }
+        }
+    }
+ }
+ .block{
+     margin-bottom: 40px; 
+     &--bgWhite{
+         background: #ffffff;
+     }
+     &__header{
+         padding:22px; 
+     }
+     &__title{
+             color:$color-base;
+             font-size: 22px;
+             text-transform: uppercase;
+             margin-bottom: 0;//bỏ h2 margin bottom tự động trong browser
+             position: relative;
+             &--flashSales{
+                 padding-left : 30px;
+                 &:before{
+                     content:"\f0e7";
+                     font-family: "Font Awesome 5 Free";
+                     font-size:25px;
+                     font-weight: 900;
+                     position: absolute;
+                     left: 0; 
+                     color: #e01222;
+                 }
+             }
+     }
+     &__viewAll{
+         color:$color-hover;
+     }
+     &__content{
+        padding: 0 22px 22px 22px;
+        &.wrap-slider .slick-arrow.slick-prev{
+            left : -22px;
+        }
+        &.wrap-slider .slick-arrow.slick-next{
+            right:-22px;
+        }
+     }
+ }
+
+ .product{
+     padding-top:25px;
+     margin-top: 25px;  
+     padding-bottom:18px;
+     margin-bottom: 18px;
+     position: relative;
+     .name-product{
+          color:$color-base;
+          font-size:14px; 
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          &:hover{
+          color:$color-hover; 
+          }
+     }
+    .reviews{
+        font-size:12px;
+        color: #ffb800;
+        margin-bottom: 12px;
+        .number-review{
+            color: $color-sub;
+        }
+    }
+    .wrap-price{
+        .price-new{
+            font-size:16px;
+            font-weight: 500;
+            color: $color-price;
+            padding-right:10px;
+        }
+        .price-old{
+            font-size: 14px;
+            font-weight: 500;
+            color:$color-sub;
+            text-decoration: line-through;
+
+        }
+    }
+    .sale{
+        &--right{
+            position: absolute;
+            top:0;
+            right:0;
+            text-transform: uppercase;
+            background:url(../images/bg-sale.png);
+            width:44px;
+            height: 43px;
+            text-align: center;
+            padding-top:8px;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 12px;
+            z-index: 9;
+        }
+        .percent-sale{
+            position: absolute;
+            top:0;
+            left :0;
+            color:#ffffff;
+            font-weight: 500;
+            font-size:15px;
+            background:url(../images/bg-sale-percent.png);
+            width: 72px;
+            height:27px;
+            text-align:right;
+            padding-top: 3px;
+            padding-right: 8px;
+            z-index: 9;
+        }
+    }
+ }
+ .shop-product{
+    .shop-name {
+        font-size:13px;
+        color:$color-sub;
+        text-decoration: none;
+        &:hover{
+            color: $color-hover;
+        }
+    }
+ }
+ 
+
+    .brand{ 
+        &--bgbrand1{
+        background: url(../images/th1.png);
+        
+        
+        }
+        &--bgbrand2{
+            background: url(../images/th2.png);
+        }
+        &--bgbrand3{
+            background: url(../images/th3.png);
+        }
+        &--bgbrand4{
+            background: url(../images/th4.png);
+        }
+        &--height{
+           
+            background-size:cover;
+            height: 190px;
+            width: 100%;
+            padding-top:100px;
+            text-align: center;
+            padding-left:15px;
+            padding-right:15px;   
+            border-radius: 10px;
+           
+        }
+   
+       &__img{
+           padding-left: 5px;
+           padding-right: 5px;
+           border-radius: 10px;
+       }
+       &__name{
+           font-weight: 500;
+           font-size: 16px;
+           color: $color-base;
+           margin-top: 17px;
+           margin-bottom: 6px;
+           a{
+               color: $color-base;
+               text-decoration: none;
+               transition: all 0.3 ease;
+               &:hover{
+                   color: $color-hover;
+               } 
+           }
+       }
+
+       &__percent{
+           position: relative;
+           font-weight: 400;
+           font-size: 16px;
+           color: $color-hover;
+           padding-left : 22px;//text cach icon time  
+           &:before{
+               content: "";
+               background: url(../images/icon-time.png);
+               position: absolute;
+               width: 14px;
+               height: 16px;
+               left: 0;
+               top: 3px;
+           }
+       }
+
+    }
+
+
+.nav-hotProduct {
+    border-bottom: 0;
+    .nav-item {
+        margin-bottom: 0;
+        min-width: 9%;
+        margin-top: 20px;
+        .nav-link {
+            border: 1px solid #e2e2e2;
+            border-radius: 10px;
+            color: #222222;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px;
+            text-align: center;
+        }
+    }
+}
+
+.list-brand{
+    list-style: none;
+    padding-left: 0;
+    margin-bottom:0;
+    text-align: center;
+    flex-wrap: wrap; 
+    li{
+        border: 1px solid #d6d6d6;
+        width: 14.285555%; 
+        height: 70px;//can bang chieu cao cua hinh full voi table
+        &:first-child{
+            border-left:0;
+        }
+        &:last-child{
+            border-right:0;
+        }
+        justify-content: center; /*justify-content + align-items + display go together*/
+        align-items: center;
+        display: flex;
+    }
+}
+.space-20{
+    .row{
+        margin-left: -10px;
+        margin-right:-10px;
+    }
+    .col-md-4{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+.block-ezmall{
+    margin-top:20px;
+    a{
+        text-decoration: none;
+    }
+    &__name{
+        margin-top:18px;
+        font-weight: 500;
+        color: $color-base;
+        font-size:16px;
+        &:hover{
+            color:$color-hover;
+        }
+    }
+    &__address{
+        font-size:13px;
+        color: $color-sub;
+        i{
+            margin-right:5px;
+        }
+    }
+}
+.affiliate-ezbuyviet{
+  
+    .title{
+         font-size: 36px;
+         color: $color-base;
+         font-weight: 500;
+         padding-bottom: 70px;
+         padding-top: 20px;
+
+    }
+    &__item{
+    background:#f5f6f7;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    }
+    &__icon{
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        margin-left: -46px;
+    }
+    .label{
+        padding-top:65px;
+        font-size:22px;
+        font-weight: 500;
+        color:$color-base;
+        margin-bottom:15px;
+    }
+    .content-short{
+        color: #999999;
+        font-size: 16px;
+        // padding-left: 30px; /
+        // padding-right: 30px; /
+        padding-bottom: 30px;
+        max-width: 290px;
+        display: inline-block;
+    }
+}
+.newletter{
+    margin-top: 48px;
+    height: 70px;
+    background: $color-hover;
+    .text{
+        margin-right:20px;
+        color: #ffffff;
+    }
+    .wrap-formNewletter{
+        justify-content: flex-end;//bat dau tai diem cuoi cung
+    }
+    .form-newletter{
+        input{
+            width: 320px;
+            height: 46px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius:0; 
+        }
+        .btn-black{
+            height: 46px;
+            background:$color-base;
+            color: #ffffff;
+            text-transform: uppercase;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            &:hover{
+                background: #cc4b00;
+            }
+        }
+    }
+}
+.socials{
+    &__item{
+        display: flex;
+        height: 42px;
+        width: 42px;
+        border-radius: 5px;
+        background: #cc4b00;
+        color: #ffffff;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+    }
+}
+
+.visit-blog{
+    margin-top:20px;
+    .row{
+        margin-left: -5px;
+        margin-right:-5px;
+    }
+    @media (min-width: 992px){
+        
+    .col-lg-2{
+        flex: 0 0 20%;
+        max-width: 20%;
+        padding-left:5px;
+        padding-right:5px;
+    }
+    }
+    .name{
+        font-size:14px;
+        color:$color-base;
+        text-align: center;
+        margin-top:15px;
+        margin-bottom: 25px;
+        &:hover{
+            color:$color-hover;
+        }
+    }
+}
+.pdl-60{
+    padding-left: 60px;
+}
+.pdl-40{
+    padding-left: 40px;
+}
+.footer{
+   
+    &__title{
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-top:35px;
+        font-size:16px;
+    }
+    &__list{
+        li{
+            font-size:14px;
+            margin-top:15px;
+            i{//i: icon
+                font-size:16px;
+                color:$color-hover;
+                margin-right:5px;
+            }
+        }
+        a{
+            color:#666666;
+            &:hover{
+                color:$color-hover;
+            }
+        }
+    }
+}
+.dangkibct{
+    margin-left:46px;
+    img{
+        margin-right:12px;
+
+    }
+}
+footer{
+    .text-southeast{
+        font-size:14px;
+        font-weight: 500;
+        margin-bottom:5px; 
+        
+    }
+    .img-flag {
+        a {
+            &:nth-child(1) {
+                display: inline-block;
+                margin-right: 7px;
+            }
+        }
+    }
+ 
+    .footer-bottom{
+        margin-top:16px;
+        margin-bottom:40px;
+    }
+    .footer__copy-right{
+        font-size:14px;
+        margin-bottom:30px;
+       h2{
+        font-weight: 500;
+        font-size:14px;
+       } 
+       .sub-text{
+           color: #666666;
+       }
+    }
+}
+.countdown{
+    margin-left:16px;
+    &__square{
+        width: 35px;
+        height: 26px;
+        background: #e01222;
+        color: #fff;
+        text-align: center;
+        display: inline-block; // dung width n height set up, if display block thi se xuong hang, if display inline thi bang size cua so
+        border-radius: 3px;
+    }
+
+}
+@media (min-width: 1201px){
+    .btn-menu{
+        display: none;
+
+    }
+}
+
+@media (max-width:1200px){
+    .banner-header-top,
+    .login-register,
+    .cart-head{
+        display:none;
+    }
+    .newletter{
+        height: auto;
+        padding: 30px 0;
+        .flex{
+            justify-content: space-between;
+        }
+    }
+    .wrap-formNewletter{
+        margin-top:15px;
+    }
+}
+.no-mg{
+    margin: 0 !important;
+}
+@media (max-width: 992px){
+    .form__main--input{
+        width:220px !important;
+    }
+    .header__bottom{
+        display: none;
+        &.open{
+            display: block;
+            position: absolute;
+            z-index: 999;
+            background: #fff;
+            width: 50%;
+            right: 0; 
+            .flex{
+                display: block;
+            }
+        }
+    
+        .menu{
+            width: 100%;
+            text-align: left;
+            &__btn{
+                display: block;
+                width: 100%;
+                text-align: left;
+                &:before{
+                    content:"\f078";
+                    right:0;
+
+                }
+            }
+        }
+        .dropdown--borderRight{
+            border-right:0;
+        }
+    }
+    .btn-menu{
+        background: transparent;
+        border: 0;
+        font-size: 32px;
+        color: #ffffff;
+    }
+    .nav-hotProduct{
+        margin-top:10px;
+        .nav-item{
+            margin-bottom:0;
+            min-width: 16%;
+            margin-top: 10px;
+        }
+    }
+    .nav-category{
+        flex-wrap:wrap;
+        li{
+            flex: 0 0 20%;
+            margin-bottom: 10px;
+        }
+    }
+    .list-brand{
+        justify-content: flex-start;//can bang tai vi tri bat dau
+        li{
+            width:20%;
+            &:last-child{
+                border-right: 1px solid #d6d6d6;
+            }
+        }
+    }
+    .affiliate-ezbuyviet__item{
+        min-height: 272px;
+    }
+    .pdl-40, .pdl-60{
+        padding-left: 15px;
+    }
+    .header__bottom .menu__sub{
+        position: relative;
+        visibility: inherit;
+        opacity: 1;
+        padding-left: 30px;
+        display: none;
+    }
+    .header__bottom .menu__btn.open:before{
+        content:"\f078";
+        transform: rotate(180deg);
+    }
+}
+
+@media (max-width: 576px){
+    .block{
+        margin-bottom:20px;
+    }
+    .wrap-header{
+        height: 60px;
+        .header--logo{
+            img{
+                max-width: 80%;
+            }
+        }
+        .form__main{
+            display: none;
+        }
+    }
+
+    .block__title-long{
+        .block__header{
+            flex-wrap: wrap;
+        }
+        .block__title, .block__viewAll{
+            width: 100%;
+            margin-top:5px;
+        }
+    }
+    .list-brand li{
+        width:33.33333%;
+    }
+    .affiliate-ezbuyviet__item{
+        margin-bottom: 75px;
+        min-height: 230px;//do cao toi thieu cua khung
+    }
+    .wrap-formNewletter{
+        flex-wrap:wrap;
+        .text, .form-newletter{
+            width:100%;
+        }
+    }
+    .newletter .form-newletter input{
+        width: calc(100% - 30%);
+    }
+
+    .visit-blog{
+        .col-6{
+            &:nth-child(3){
+                display: none;
+            }
+        }
+    }
+    .dangkibct{
+        margin-left:0;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .text-southeast,
+    .img-flag{
+        text-align: center;
+    }
+    .countdown{
+        display: none;
+    }
+    .header__bottom.open{
+        width: 100%;
+    }
+    .wrap-slider .slick-arrow{
+        display: none !important;
+    }
+}

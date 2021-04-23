@@ -1,0 +1,318 @@
+.breacumb {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  &__item {
+    font-size: 14px;
+    color: #666666;
+    a {
+      color: #666666;
+      position: relative;
+      display: inline-block;
+      padding-right: 50px;
+      &:before {
+        content: "\f054";
+        position: absolute;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 12px;
+        top: 2px;
+        right: 18px;
+      }
+    }
+  }
+}
+.product-detail__slider {
+  position: relative;
+  .zoom-productDetail {
+    position: absolute;
+    z-index: 99999; //quy trinh vi trí cho ảnh nếu ảnh nằm sau 1 ảnh lớn hơn
+    background: transparent;
+    border: 0;
+    bottom: 160px;
+    left: 10px;
+  }
+  .js-video-button {
+    position: absolute;
+    z-index: 99999; //quy trinh vi trí cho ảnh nếu ảnh nằm sau 1 ảnh lớn hơn
+    background: transparent;
+    border: 0;
+    bottom: 160px;
+    left: 75px;
+  }
+}
+.slide-nav {
+  padding-top: 20px;
+  .slick-list {
+    margin-left: -6px;
+    margin-right: -6px;
+  }
+
+  .slick-slide {
+    padding: 6px;
+    border-right: 3px;
+  }
+}
+.block-detail {
+  background: #fff;
+  padding: 20px;
+  &__name {
+    font-weight: 500;
+    font-size: 20px;
+    color: #333;
+  }
+  &__infor {
+    .wrap-price {
+      align-items: baseline;
+    }
+    .price-old {
+      color: #999;
+      font-size: 16px;
+      font-weight: 400;
+      text-decoration: line-through;
+      margin-left: 10px;
+    }
+    .price-new {
+      color: $color-hover;
+      font-size: 22px;
+      font-weight: 500;
+    }
+    .line-product {
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .label-name {
+      font-weight: 500px;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #222222;
+      display: inline-block;
+      min-width: 100px;
+    }
+    .number-product {
+      font-size: 12px;
+      color: $color-hover;
+      text-transform: uppercase;
+    }
+    .sub-text {
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #666666;
+    }
+    .fa-flag {
+      color: #666666;
+      font-size: 14px;
+    }
+    .percen-sale {
+      background: url(../images/bg-sale-product.png);
+      width: 77px;
+      height: 24px;
+      display: inline-block;
+      text-align: center;
+    }
+    .view-detail {
+      font-size: 12px;
+      color: $color-hover;
+      font-weight: 500;
+    }
+    .dropdown {
+      position: static;
+    }
+    .dropdown-sale {
+      min-width: 100%;
+      top: 35px !important;
+      right: 0;
+      left: 0;
+      transform: none !important;
+      padding: 16px 20px;
+      height: 235px;
+      overflow: auto;
+    }
+    .title-sale {
+      font-size: 14px;
+      font-weight: 500;
+      color: #222222;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+  }
+}
+.checkbox-css3 {
+  margin-right: 38px;
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  label {
+    color: #458500;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  input[type="checkbox"] + label span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: -2px 10px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    background: #ffffff;
+    border: 1px solid #458500;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  input[type="checkbox"]:checked + label span {
+    &:before {
+      content: "\f00c";
+      font-weight: 900;
+      font-size: 16px;
+      font-family: "Font Awesome 5 Free";
+      position: absolute;
+      top: -6px;
+      left: 0px;
+    }
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+}
+.radio-css3 {
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"] + label {
+  }
+
+  input[type="radio"] + label span {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    border: 2px solid #cccccc;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  input[type="radio"]:checked + label span {
+    background: $color-hover;
+    border: 2px solid $color-hover;
+  }
+}
+.infor-shop {
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  b {
+    font-weight: 500;
+  }
+  .sku {
+    margin-right: 35px;
+  }
+}
+.sale-number {
+  &__5 {
+    position: relative;
+    padding-left: 110px;
+    padding-right: 15px;
+    font-size: 14px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+    height: 70px;
+    background: #fff;
+    margin-bottom: 20px;
+    &:before {
+      content: "";
+      width: 90px;
+      height: 70px;
+      position: absolute;
+      left: -5px;
+      background: url("../images/bg-head-sale.png");
+    }
+  }
+  &__title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #222222;
+    margin-bottom: 8px;
+    margin-top: 10px;
+  }
+  &__hsd {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 0;
+  }
+}
+.number-review {
+  background: #f9f9f9;
+  border: 2px solid $color-hover;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  &__text {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 12px;
+    span {
+      color: #666666;
+    }
+  }
+}
+.size-product {
+    
+  span {
+    height: 32px;
+    width: 32px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    line-height: 32px;
+    font-size: 14px;
+    position: relative;
+    &.out-of-stock {
+      &:before {
+        content: "";
+        width: 1px;
+        height: 40px;
+        position: absolute;
+        background: #cdcdcd;
+        transform: rotate(-45deg);
+        left: 15px;
+        top: -5px;
+      }
+      &:after {
+        content: "";
+        width: 1px;
+        height: 40px;
+        position: absolute;
+        background: #cdcdcd;
+        transform: rotate(45deg);
+        right: 15px;
+        top: -5px;
+      }
+    }
+  }
+}
+
+.btn-product {
+    border: 1.5px solid #cccccc;
+    border-radius: 5px;
+    &__dec, &__inc, input{
+        height: 36px;
+        width: 40px;
+        border:none;
+        background: #fff;
+        text-align: center;
+    }
+    input{
+        &:hover{
+            border:done;
+        }
+    }
+}
+.quantity{
+    margin-left : 18px;
+    font-size: 14px;
+}
